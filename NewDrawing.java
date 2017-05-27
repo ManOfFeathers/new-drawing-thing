@@ -35,7 +35,7 @@ public class NewDrawing {
 		StdDraw.setXscale(0, width);
 		StdDraw.setYscale(0, height);
 
-		StdDraw.setPenRadius(.005);
+		StdDraw.setPenRadius(.000025);
 		StdDraw.enableDoubleBuffering();
 
 		Coord2D.focalx = 0;
@@ -45,11 +45,11 @@ public class NewDrawing {
 		
 		ArrayList<Line> lines = new ArrayList<Line>();
 		
-		int space = 100;
+		int space = 2500;
 		
-		int z = 300;
+		int z = 0;
 		
-		for (int m = 0; m < 100; m++) {
+		for (int m = 0; m < 2500; m++) {
 			Coord2D coord1 = new Coord2D(m * 900 / space, 0, z);
 			Coord2D coord2 = new Coord2D(0, 900 - (m * 900 / space), z);
 			
@@ -61,19 +61,14 @@ public class NewDrawing {
 			lines.add(line2);
 		}
 		
-		for (int j = 0; j < 901; j++) {
-			for (int i = 0; i < 901; i++) {
-				StdDraw.clear();
-				
-/*				Coord2D.focalx += z;
-				Coord2D.focaly += z;*/
-				
-				for (Line line1 : lines) {
-					StdDraw.setPenColor(StdDraw.BLUE);
-					line1.draw();
-				}
-				StdDraw.show();
+		for (int i = 0; i < 901; i++) {
+			StdDraw.clear();
+			
+			for (Line line1 : lines) {
+				StdDraw.setPenColor(StdDraw.BLUE);
+				line1.draw();
 			}
+			StdDraw.show();
 		}
 	}
 }
