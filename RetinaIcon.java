@@ -40,7 +40,7 @@ public class RetinaIcon extends ImageIcon {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         }
         return isRetina;
     }
