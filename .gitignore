@@ -1,3 +1,4 @@
 *.class
 compile.command
 run.command
+build_run.command
