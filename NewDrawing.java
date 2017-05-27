@@ -50,7 +50,8 @@ public class NewDrawing {
 			for (int j = 0; 0 <= 900; j++) {
 				Coord2D coord2 = new Coord2D(0,j);
 			}*/
-			
+
+			System.out.println("Jean");
 
 			Coord2D coord1 = new Coord2D(900,0);
 			Coord2D coord2 = new Coord2D(0,100);
