@@ -24,45 +24,24 @@ import newdrawingthing.Line;
 */
 
 public class Grid {
-	public static Line[] generateLines(double space, double width, double height, double depth) {
+	public static Line3D[] generateLines(double space, double width, double height, double depth) {
 		int xNum = (int) Math.floor(width / space);
 		int yNum = (int) Math.floor(height / space);
 		int zNum = (int) Math.floor(depth / space);
-		
-		Line[] lines = new Line[(xNum + yNum) * zNum];
+
+		Line3D[] lines = new Line3D[(xNum + yNum) * zNum];
 		int nextIndex = 0;
 		for (int z = 0; z < zNum; z++) {
 			for (int y = 0; y < yNum; y++) {
-				lines[nextIndex] = new Line(0, y * space, z * space, width, y * space, z * space);
+				lines[nextIndex] = new Line3D(0, y * space, z * space, width, y * space, z * space);
 				nextIndex++;
 			}
-			
+
 			for (int x = 0; x < xNum; x++) {
-				lines[nextIndex] = new Line(x * space, 0, z * space, x * space, height, z * space);
-				nextIndex++;	
+				lines[nextIndex] = new Line3D(x * space, 0, z * space, x * space, height, z * space);
+				nextIndex++;
 			}
 		}
 		return lines;
 	}
-	
-/*	public static Line[] generateOtherLines(double space, double width, double height, double depth) {
-		int xNum = (int) Math.floor(width / space);
-		int yNum = (int) Math.floor(height / space);
-		int zNum = (int) Math.floor(depth / space);
-		
-		Line[] lines = new Line[(xNum + yNum) * zNum];
-		int nextIndex = 0;
-		for (int z = 0; z < zNum; z++) {
-			for (int y = 0; y < yNum; y++) {
-				lines[nextIndex] = new Line(150, y * space, z * space, width - 150, y * space, z * space);
-				nextIndex++;
-			}
-			
-			for (int x = 0; x < xNum; x++) {
-				lines[nextIndex] = new Line(x * space, 150, z * space, x * space, height - 150, z * space);
-				nextIndex++;	
-			}
-		}
-		return lines;
-	}*/
 }
