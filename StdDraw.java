@@ -1,3 +1,5 @@
+package newdrawingthing;
+
 /******************************************************************************
  *  Compilation:  javac StdDraw.java
  *  Execution:    java StdDraw
@@ -17,7 +19,10 @@
  * Modified by Jean Flaherty to work with retina displays
  ******************************************************************************/
 
+import newdrawingthing.RetinaIcon;
+
 import java.awt.BasicStroke;
+
 import java.awt.Color;
 import java.awt.FileDialog;
 import java.awt.Font;

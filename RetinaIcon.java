@@ -1,3 +1,5 @@
+package newdrawingthing;
+
 /*
 RetinaIcon
 
