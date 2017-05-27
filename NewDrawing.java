@@ -52,6 +52,8 @@ public class NewDrawing {
 			}*/
 
 			//System.out.println("Jean");
+			
+			System.out.println("Blah");
 
 			Coord2D coord1 = new Coord2D(900,0);
 			Coord2D coord2 = new Coord2D(0,100);
