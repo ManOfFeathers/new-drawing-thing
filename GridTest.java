@@ -18,8 +18,8 @@ import newdrawingthing.Coord3D;
 
 public class GridTest {
 	public static void main(String args[]) {
-		int width = 900, height = 900, depth = 900;
-		StdDraw.setCanvasSize(width, height); //default is 512 x 512
+		int width = 700, height = 700, depth = 700;
+		StdDraw.setCanvasSize(width, height);
 		StdDraw.setXscale(0, width);
 		StdDraw.setYscale(0, height);
 
