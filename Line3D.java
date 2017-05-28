@@ -3,6 +3,19 @@ package newdrawingthing;
 import newdrawingthing.StdDraw;
 import newdrawingthing.Coord3D;
 
+/*
+*	Line 3D
+*
+*	PROGRAMMER: Griffin Myers & Jean Flaherty (05/27/2017)
+*
+*	DESCRIPTION:
+*	Code for making lines in 3D space
+*
+*	CREDITS:
+*	This program is copyright (c) 2017 Griffin Myers & Jean Flaherty.
+*
+*/
+
 public class Line3D {
 
 	public Coord3D start, end;

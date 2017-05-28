@@ -3,23 +3,15 @@ package newdrawingthing;
 import newdrawingthing.Line3D;
 
 /*
-*	CS102 Final Project
+*	Grid
 *
-*	PROGRAMMER: Griffin Myers (4/26/2017)
-*	CLASS: CS102
-*	SEMESTER: Spring 2017
-*	INSTRUCTOR: Tom Jensen
+*	PROGRAMMER: Griffin Myers & Jean Flaherty (05/27/2017)
 *
 *	DESCRIPTION:
-*	This project attempts to manipulate the StdDraw code to
-*	create abstract 3D images.
-*
-*	EXTERNAL LIBRARIES:
-*	The StdDraw graphic library. Available at:
-*	http://introcs.cs.princeton.edu/java/stdlib/
+*	Code for making grids in 3D space
 *
 *	CREDITS:
-*	This program is copyright (c) 2017 Griffin Myers.
+*	This program is copyright (c) 2017 Griffin Myers & Jean Flaherty.
 *
 */
 

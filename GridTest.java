@@ -3,6 +3,19 @@ package newdrawingthing;
 import newdrawingthing.StdDraw;
 import newdrawingthing.Coord3D;
 
+/*
+*	Grid Test
+*
+*	PROGRAMMER: Griffin Myers & Jean Flaherty (05/27/2017)
+*
+*	DESCRIPTION:
+*	A test for the grid generation
+*
+*	CREDITS:
+*	This program is copyright (c) 2017 Griffin Myers & Jean Flaherty.
+*
+*/
+
 public class GridTest {
 	public static void main(String args[]) {
 		int width = 900, height = 900, depth = 900;

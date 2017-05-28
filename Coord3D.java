@@ -2,6 +2,19 @@ package newdrawingthing;
 
 import newdrawingthing.Coord2D;
 
+/*
+*	Coord 3D
+*
+*	PROGRAMMER: Griffin Myers & Jean Flaherty (05/27/2017)
+*
+*	DESCRIPTION:
+*	Code for making coordinates in 3D space
+*
+*	CREDITS:
+*	This program is copyright (c) 2017 Griffin Myers & Jean Flaherty.
+*
+*/
+
 public class Coord3D {
 	public double x = 0, y = 0, z = 0;
 	public static double focalx = 0, focaly = 0;
@@ -24,12 +37,15 @@ public class Coord3D {
         double x2d = x - focalx;
         double y2d = y - focaly;
 
-        double temp_z = z * distortion;
-        temp_z++;
+        // scale of the coordinate
+        double zscale = z * distortion;
+        zscale++; // avoid divide by zero
 
-        x2d = x2d / temp_z;
-        y2d = y2d / temp_z;
+        // weak perspective projection
+        x2d = x2d / zscale;
+        y2d = y2d / zscale;
 
+        // reset origin back to original
         x2d = x2d + focalx;
         y2d = y2d + focaly;
 
