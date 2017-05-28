@@ -1,149 +1,123 @@
 package newdrawingthing;
 
 /*
-*	CS102 Final Project
+*	NewDrawing
 *
-*	PROGRAMMER: Griffin Myers (4/26/2017)
-*	CLASS: CS102
-*	SEMESTER: Spring 2017
-*	INSTRUCTOR: Tom Jensen
+*	PROGRAMMER: Griffin Myers (5/27/2017)
 *
 *	DESCRIPTION:
-*	This project attempts to manipulate the StdDraw code to
+*	This project is another attempt to manipulate the StdDraw code to
 *	create abstract 3D images.
 *
 *	EXTERNAL LIBRARIES:
-*	The StdDraw graphic library. Available at:
+*	The StdDraw graphics library. Available at:
 *	http://introcs.cs.princeton.edu/java/stdlib/
 *
 *	CREDITS:
-*	This program is copyright (c) 2017 Griffin Myers.
+*	Programmed by Griffin Myers with ample help from Jean Flaherty.
 *
 */
 
 import newdrawingthing.StdDraw;
 
-import newdrawingthing.Coord2D;
+import java.util.ArrayList;
+
+import newdrawingthing.Coord3D;
 
 public class NewDrawing {
 	public static void main(String args[]) {
-		int width = 900, height = 900, depth = 900;
+		int width = 700, height = 700, depth = 700;
 		StdDraw.setCanvasSize(width, height); //default is 512 x 512
+
 		StdDraw.setXscale(0, width);
 		StdDraw.setYscale(0, height);
 
+		StdDraw.setPenRadius(.0005);
 		StdDraw.enableDoubleBuffering();
 
-		Coord2D.focalx = 0;
-		Coord2D.focaly = 0;
+		Coord3D.focalx = width/2;
+		Coord3D.focaly = height/2;
+		Coord3D.distortion = 1.0 / Math.sqrt(width * width + height * height);
 
-		Coord2D.d = 1.0 / Math.sqrt(width * width + height * height);
-		for (int i = 0; i < 901; i++) {
-			StdDraw.clear();
-			Coord2D.focalx = i / 2;
-			Coord2D.focaly = i / 2;
+		ArrayList<Line3D> blueLines = new ArrayList<Line3D>();
+		ArrayList<Line3D> redLines = new ArrayList<Line3D>();
+		ArrayList<Line3D> greenLines = new ArrayList<Line3D>();
+		ArrayList<Line3D> yellowLines = new ArrayList<Line3D>();
 
-/*			for (int h = 900; h >= 0; h--) {
-				Coord2D coord1 = new Coord2D(h,0);
-			}
+		int space = 250;
 
-			for (int j = 0; 0 <= 900; j++) {
-				Coord2D coord2 = new Coord2D(0,j);
-			}*/
+		int z = 0;
 
-			//System.out.println("Jean");
+		for (int m = 0; m < space; m++) {
+			Coord3D coord1 = new Coord3D(0, 0, m * depth / space);
+			Coord3D coord2 = new Coord3D(0, m * height / space, depth);
 
-			Coord2D coord1 = new Coord2D(900,0);
-			Coord2D coord2 = new Coord2D(0,100);
-			Coord2D coord3 = new Coord2D(800,0);
-			Coord2D coord4 = new Coord2D(0,200);
-			Coord2D coord5 = new Coord2D(700,0);
-			Coord2D coord6 = new Coord2D(0,300);
-			Coord2D coord7 = new Coord2D(600,0);
-			Coord2D coord8 = new Coord2D(0,400);
-			Coord2D coord9 = new Coord2D(500,0);
-			Coord2D coord10 = new Coord2D(0,500);
-			Coord2D coord11 = new Coord2D(400,0);
-			Coord2D coord12 = new Coord2D(0,600);
-			Coord2D coord13 = new Coord2D(300,0);
-			Coord2D coord14 = new Coord2D(0,700);
-			Coord2D coord15 = new Coord2D(200,0);
-			Coord2D coord16 = new Coord2D(0,800);
-			Coord2D coord17 = new Coord2D(100,0);
-			Coord2D coord18 = new Coord2D(0,900);
-
-
-			Coord2D coord19 = new Coord2D(800,900);
-			Coord2D coord20 = new Coord2D(900,100);
-
-			Coord2D coord21 = new Coord2D(700,900);
-			Coord2D coord22 = new Coord2D(900,200);
-
-			Coord2D coord23 = new Coord2D(600,900);
-			Coord2D coord24 = new Coord2D(900,300);
-
-			Coord2D coord25 = new Coord2D(500,900);
-			Coord2D coord26 = new Coord2D(900,400);
-
-			Coord2D coord27 = new Coord2D(400,900);
-			Coord2D coord28 = new Coord2D(900,500);
-
-			Coord2D coord29 = new Coord2D(300,900);
-			Coord2D coord30 = new Coord2D(900,600);
-
-			Coord2D coord31 = new Coord2D(200,900);
-			Coord2D coord32 = new Coord2D(900,700);
-
-			Coord2D coord33 = new Coord2D(100,900);
-			Coord2D coord34 = new Coord2D(900,800);
-
-			int evenMoreNumLines = 18;
-			Line evenMoreLines[] = new Line[evenMoreNumLines];
-
-			evenMoreLines[0] = new Line(coord1, coord2);
-			evenMoreLines[1] = new Line(coord3, coord4);
-			evenMoreLines[2] = new Line(coord5, coord6);
-
-			evenMoreLines[3] = new Line(coord7, coord8);
-			evenMoreLines[4] = new Line(coord9, coord10);
-			evenMoreLines[5] = new Line(coord11, coord12);
-
-			evenMoreLines[6] = new Line(coord13, coord14);
-			evenMoreLines[7] = new Line(coord15, coord16);
-			evenMoreLines[8] = new Line(coord17, coord18);
-
-			evenMoreLines[9] = new Line(coord19, coord1);
-			evenMoreLines[10] = new Line(coord21, coord20);
-			evenMoreLines[11] = new Line(coord23, coord22);
-
-			evenMoreLines[12] = new Line(coord25, coord24);
-			evenMoreLines[13] = new Line(coord27, coord26);
-			evenMoreLines[14] = new Line(coord29, coord28);
-
-			evenMoreLines[15] = new Line(coord31, coord30);
-			evenMoreLines[16] = new Line(coord33, coord32);
-			evenMoreLines[17] = new Line(coord18, coord34);
-
-/*			for (int g = 0; g < evenMoreNumLines; g++) {
-				evenMoreLines[g] = new Line(coord1, coord2);
-			}*/
-
-			for (int f = 0; f < evenMoreNumLines; f++) {
-				StdDraw.setPenColor(StdDraw.BLUE);
-				evenMoreLines[f].draw();
-			}
-			StdDraw.show();
-
-/*			for (int j = 0; j < evenMoreNumLines; j++) {
-				for (int xCoord = 0; xCoord < coord1.x; xCoord++) {
-					xCoord--;
-				}
-				for (int yCoord = 0; yCoord < coord2.y; yCoord++) {
-					yCoord--;
-				}
-				evenMoreLines[j] = new Line(coord1, coord2);
-			}*/
+			Coord3D coord3 = new Coord3D(width - (m * width / space), height, depth);
+			Coord3D coord4 = new Coord3D(width, height, m * depth / space);
+			
+			Coord3D coord5 = new Coord3D(0, 0, m * height / space);
+			Coord3D coord6 = new Coord3D(m * width / space, 0, depth);
+			
+			Coord3D coord7 = new Coord3D(width, height - (m * height / space), depth);
+			Coord3D coord8 = new Coord3D(width, height, m * depth / space);
+			
+			Coord3D coord9 = new Coord3D(m * width / space, height, depth);
+			Coord3D coord10 = new Coord3D(0, height, m * depth / space);
+			
+			Coord3D coord11 = new Coord3D(0, height - (m * height / space), depth);
+			Coord3D coord12 = new Coord3D(0, height, m * depth / space);
+			
+			Coord3D coord13 = new Coord3D(width - (m * width / space), 0, depth);
+			Coord3D coord14 = new Coord3D(width, 0, m * depth / space);	
+			
+			Coord3D coord15 = new Coord3D(width, m * width / space, depth);
+			Coord3D coord16 = new Coord3D(width, 0, m * depth / space);	
+		
+			Line3D line1 = new Line3D(coord1, coord2);
+			Line3D line2 = new Line3D(coord3, coord4);
+			
+			Line3D line3 = new Line3D(coord5, coord6);
+			Line3D line4 = new Line3D(coord7, coord8);
+			
+			Line3D line5 = new Line3D(coord9, coord10);
+			Line3D line6 = new Line3D(coord11, coord12);
+			
+			Line3D line7 = new Line3D(coord13, coord14);
+			Line3D line8 = new Line3D(coord15, coord16);
+		
+			blueLines.add(line1);
+			redLines.add(line2);
+			greenLines.add(line3);
+			yellowLines.add(line4);
+			greenLines.add(line5);
+			yellowLines.add(line6);
+			redLines.add(line7);
+			blueLines.add(line8);
 		}
 
+		for (Line3D line1 : blueLines) {
+			StdDraw.setPenColor(StdDraw.BLUE);
+			line1.draw();
+		}
+		StdDraw.show();
+		
+		for (Line3D line1 : redLines) {
+			StdDraw.setPenColor(StdDraw.RED);
+			line1.draw();
+		}
+		StdDraw.show();
+		
+		for (Line3D line1 : greenLines) {
+			StdDraw.setPenColor(StdDraw.GREEN);
+			line1.draw();
+		}
+		StdDraw.show();
+		
+		for (Line3D line1 : yellowLines) {
+			StdDraw.setPenColor(StdDraw.YELLOW);
+			line1.draw();
+		}
+		StdDraw.show();
+		
 	}
 }

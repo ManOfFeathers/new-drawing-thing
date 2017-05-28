@@ -1,5 +1,3 @@
-package newdrawingthing;
-
 /*
 RetinaIcon
 
@@ -7,6 +5,7 @@ DESCRIPTION: A subclass of ImageIcon that supports retina displays
 ADAPTED FROM: http://stackoverflow.com/questions/12431148/swing-and-bitmaps-on-retina-displays
 PROGRAMMED BY: Jean Flaherty
 */
+package newdrawingthing;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
