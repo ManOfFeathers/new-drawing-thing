@@ -1,5 +1,23 @@
 package newdrawingthing;
 
+/*
+*	NewDrawing
+*
+*	PROGRAMMER: Griffin Myers (5/27/2017)
+*
+*	DESCRIPTION:
+*	This project is another attempt to manipulate the StdDraw code to
+*	create abstract 3D images.
+*
+*	EXTERNAL LIBRARIES:
+*	The StdDraw graphics library. Available at:
+*	http://introcs.cs.princeton.edu/java/stdlib/
+*
+*	CREDITS:
+*	Programmed by Griffin Myers with ample help from Jean Flaherty.
+*
+*/
+
 import newdrawingthing.StdDraw;
 
 import java.util.ArrayList;
@@ -101,16 +119,5 @@ public class NewDrawing {
 		}
 		StdDraw.show();
 		
-/*		while (true) {
-			StdDraw.clear();
-			Coord3D.focalx = StdDraw.mouseX();
-			Coord3D.focaly = StdDraw.mouseY();
-			for (Line3D line1 : lines) {
-				StdDraw.setPenColor(StdDraw.BLUE);
-				line1.draw();
-			}
-			StdDraw.show();
-			StdDraw.pause(30);
-		}*/
 	}
 }
